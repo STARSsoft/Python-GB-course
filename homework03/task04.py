@@ -10,7 +10,9 @@
 на любое большее количество друзей.
 
 '''
-my_dict={"Вася":("палатка","нож","веревка","лопата","спальник"),"Петя":("палатка","фонарь","телефон","спальник"),"Коля":("палатка","фонарь","телефон","котелок","спальник")}
+my_dict = {"Вася": ("палатка", "нож", "спальник"),
+           "Петя": ("фонарь", "веревка", "телефон", "спальник"),
+           "Коля": ("палатка", "фонарь", "телефон", "котелок", "спальник")}
 
 # общие вещи, которые есть у всех
 common_items = set(next(iter(my_dict.values())))
@@ -18,22 +20,31 @@ for name in my_dict.keys():
     common_items = common_items & set(my_dict[name])
 print("Вещи у всех:", common_items)
 
-# уникальные вещи
-
 all_items = set()
-for items in my_dict.values():  
-    all_items.update(set(items))  # Добавляем элементы множества к all_items
+for items in my_dict.values():
+    all_items.update(set(items))
 
+# уникальные вещи
 
 unique_items = set()
 for item in all_items:
     count = 0
-    for friend in my_dict:
-        if item in my_dict[friend]:
+    for name in my_dict:
+        if item in my_dict[name]:
             count += 1
-            cur_friend = friend
+            cur_friend = name
     if count == 1:
         unique_items.add((item, cur_friend))
 print("Уникальные вещи и друзья, которые их взяли:", unique_items)
 
-
+# Какие вещи есть у всех друзей кроме одного
+missing_item = set()
+for item in all_items:
+    count = 0
+    for name in my_dict:
+        if item not in my_dict[name]:
+            count += 1
+            cur_friend = name
+    if count == 1:
+        missing_item.add((item, cur_friend))
+print("Вещи есть у всех, кроме одного: ", missing_item)
