@@ -98,4 +98,5 @@ def set_queens(*args):
 if __name__=="__main__":
     print("это не решение")
     print(check_cords(*not_solution()))
+    
     print(not_solution())
