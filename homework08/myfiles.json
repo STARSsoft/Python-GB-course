@@ -1,0 +1,37 @@
+[
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles",
+        "type": "directory",
+        "size": 750
+    },
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles\\file00",
+        "type": "file",
+        "size": 100
+    },
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles\\dir1",
+        "type": "directory",
+        "size": 200
+    },
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles\\dir1\\file01",
+        "type": "file",
+        "size": 200
+    },
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles\\dir2",
+        "type": "directory",
+        "size": 450
+    },
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles\\dir2\\file02",
+        "type": "file",
+        "size": 300
+    },
+    {
+        "path": "C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework08\\myfiles\\dir2\\file03",
+        "type": "file",
+        "size": 150
+    }
+]
