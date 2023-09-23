@@ -14,7 +14,8 @@ import pickle
 import os
 
 from pathlib import Path
-  
+
+
 def create_file_(dir_, filename_="new_file", size_=100):
     """
     функция создания файла
@@ -32,7 +33,11 @@ def create_file_(dir_, filename_="new_file", size_=100):
     with open(file_path, 'wb') as file:
         file.write(b'\0' * size_)
 
+
 def get_size_(path_):
+    """
+    размер директории по указаному пути
+    """
     total_size = 0
     for dir_path, dir_names, file_names in os.walk(path_):
         for file in file_names:
@@ -40,13 +45,12 @@ def get_size_(path_):
             total_size += os.path.getsize(file_path)
     return total_size
 
+
 def save_directory_info(path_):
     results = []
 
     # Рекурсивно обходим директорию и все вложенные директории
     for dir_path, dir_names, file_names in os.walk(path_, topdown=True, onerror=None, followlinks=False):
-
-
 
         # добавляем информацию о директории
         dir_info = {
@@ -54,7 +58,7 @@ def save_directory_info(path_):
             'type': 'directory',
             'size': get_size_(dir_path)
         }
-        results.append(dir_info)        
+        results.append(dir_info)
 
         # добавляем информацию о файлах
         for file in file_names:
@@ -66,10 +70,9 @@ def save_directory_info(path_):
             }
             results.append(file_info)
 
-
     # Сохраняем результаты обхода в файлы JSON, CSV и pickle
-    
-    save_path=os.path.join(os.path.dirname(my_path), os.path.basename(path_))
+
+    save_path = os.path.join(os.path.dirname(path_), os.path.basename(path_))
 
     with open(f'{save_path}.json', 'w') as json_file:
         json.dump(results, json_file, indent=4)
@@ -83,18 +86,17 @@ def save_directory_info(path_):
     with open(f'{save_path}.pickle', 'wb') as pickle_file:
         pickle.dump(results, pickle_file)
 
-   
-
 
 if __name__ == "__main__":
-    my_path = Path().cwd() / "homework08" /"myfiles"
-    create_file_(my_path,"file00")
-    my_path = Path().cwd() / "homework08" /"myfiles"/"dir1"
-    create_file_(my_path,"file01",200)
-    my_path = Path().cwd() / "homework08" /"myfiles"/"dir2"
-    create_file_(my_path,"file02",300)
-    create_file_(my_path,"file03",150)
-    my_path = Path().cwd() / "homework08" /"myfiles"
+
+    my_path = Path().cwd() / "homework08" / "myfiles"
+    create_file_(my_path, "file00")
+    my_path = Path().cwd() / "homework08" / "myfiles"/"dir1"
+    create_file_(my_path, "file01", 200)
+    my_path = Path().cwd() / "homework08" / "myfiles"/"dir2"
+    create_file_(my_path, "file02", 300)
+    create_file_(my_path, "file03", 150)
+    my_path = Path().cwd() / "homework08" / "myfiles"
+
     save_directory_info(my_path)
-    a_path = os.path.dirname(my_path)
-    print(a_path)
+
