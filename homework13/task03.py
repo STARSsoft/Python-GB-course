@@ -12,6 +12,7 @@
 Создать несколько объектов класса Person и Employee с разными данными и проверить, что исключения работают корректно при передаче неверных данных.
 '''
 
+
 class Person:
     def __init__(self, last_name, first_name, middle_name, age):
         self._validate_name(last_name)
@@ -76,7 +77,7 @@ class InvalidIdError(Exception):
         return f"Invalid id: {self.val}. Id should be a 6-digit positive integer between 100000 and 999999."
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     person = Person("", "John", "Doe", 30)
     person = Person("Alice", "Smith", "Johnson", -5)
     employee = Employee("Bob", "Johnson", "Brown", 40, 12345)

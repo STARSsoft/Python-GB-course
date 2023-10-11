@@ -1,13 +1,12 @@
 '''
 Допишите в вашу задачу Archive обработку исключений.
-
 Добавьте исключение в ваш код InvalidTextError, которые будет вызываться, когда текст не является строкой или является пустой строкой.
-
 И InvalidNumberError, которое будет вызываться, если число не является положительным целым числом или числом с плавающей запятой.
-
 '''
 
 from typing import Union
+
+
 class Archive:
     """
     Класс, представляющий архив текстовых и числовых записей.
@@ -35,7 +34,7 @@ class Archive:
 
         if not isinstance(text, str) or text == "":
             raise InvalidTextError(text)
-        
+
         if not (isinstance(number, int) or isinstance(number, float)) or number <= 0:
             raise InvalidNumberError(number)
 
@@ -47,29 +46,31 @@ class Archive:
 
     def __repr__(self):
         return f'Archive("{self.text}", {self.number})'
-    
+
 
 class InvalidNumberError(Exception):
 
-        def __init__(self,val):
-            
-            self.val = val
+    def __init__(self, val):
 
-        def __str__(self):
+        self.val = val
 
-            return f"Invalid number: {self.val}. Number should be a positive integer or float."
-        
+    def __str__(self):
+
+        return f"Invalid number: {self.val}. Number should be a positive integer or float."
+
+
 class InvalidTextError(Exception):
 
-        def __init__(self,val):
-            
-            self.val = val
+    def __init__(self, val):
 
-        def __str__(self):
+        self.val = val
 
-            return f"Invalid text: {self.val}. Text should be a non-empty string."
-        
-if __name__=="__main__":
-    
+    def __str__(self):
+
+        return f"Invalid text: {self.val}. Text should be a non-empty string."
+
+
+if __name__ == "__main__":
+
     invalid_archive_instance = Archive("Sample text", -5)
     print(invalid_archive_instance)
