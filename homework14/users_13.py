@@ -49,7 +49,7 @@ class Employee(Person):
             raise InvalidIdError(id_number)
 
     def get_level(self):
-        return sum(int(digit) for digit in str(self.id_number)) % 7
+        return sum(int(digit) for digit in str(self.id_number)) % 7 
 
 
 class InvalidNameError(Exception):
