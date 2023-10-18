@@ -1,0 +1,6 @@
+INFO:__main__:MyInfo_(obj_name='myfiles', extension=None, is_catalog=True, parent_catalog='C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework15')
+INFO:__main__:MyInfo_(obj_name='dir1', extension=None, is_catalog=True, parent_catalog='C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework15\\myfiles')
+INFO:__main__:MyInfo_(obj_name='file01', extension=None, is_catalog=False, parent_catalog='C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework15\\myfiles\\dir1')
+INFO:__main__:MyInfo_(obj_name='dir2', extension=None, is_catalog=True, parent_catalog='C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework15\\myfiles')
+INFO:__main__:MyInfo_(obj_name='file02', extension='doc', is_catalog=False, parent_catalog='C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework15\\myfiles\\dir2')
+INFO:__main__:MyInfo_(obj_name='file03.xyz', extension='doc', is_catalog=False, parent_catalog='C:\\GEEKBRAINS\\Python immersion\\Homeworks\\homework15\\myfiles\\dir2')
