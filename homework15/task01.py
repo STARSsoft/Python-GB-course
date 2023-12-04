@@ -65,7 +65,7 @@ if __name__ == "__main__":
     '''
     PS  ???\homeworks\homework15> python task01.py "???\Homeworks\homework15\myfiles"
     '''
-    parser = argparse.ArgumentParser(description="Соберать информацию о содержимом в виде объектов namedtuple.")
+    parser = argparse.ArgumentParser(description="Собирать информацию о содержимом в виде объектов namedtuple.")
     parser.add_argument("folder", nargs="?", type=str, help="Указать путь к папке")
 
     args = parser.parse_args()
